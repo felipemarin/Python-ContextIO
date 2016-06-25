@@ -53,7 +53,7 @@ class User(BaseResource):
     def post_email_account(self, **kwargs):
         req_args = ["email", "server", "username", "use_ssl", "port", "type"]
 
-        all_args = req_args + ["status_callback_url"]
+        all_args = req_args + ["status_callback_url", "password"]
 
         email_account = super(User, self).post(
             uri="email_accounts", params=kwargs, return_bool=False, all_args=all_args,
